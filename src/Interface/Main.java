@@ -1,18 +1,20 @@
-package sample;
+package Interface;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Group root = new Group();
+        Scene scene = new Scene(root, 500, 500);
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Brandon's Chess Game");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.getIcons().add(new Image("file:chess_piece_icon.png"));
         primaryStage.show();
     }
 
